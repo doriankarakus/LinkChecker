@@ -64,6 +64,7 @@ def import_apps_from_file(filename):
 # FIX THIS. The file path is create by combining the file name and the folder name. The folder name is not passed as a parameter
 # Easy fix. Make the folder name based on the file name and have it delete and recreate the folder each time.
 # Once in folder search folder for any files and whatever is found is the file path that is passed down into update function
+# fixed issue but keeping for documentation
 
 
 def download_installer(app, folder_name="Superdump"):

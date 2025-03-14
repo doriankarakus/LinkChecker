@@ -1,4 +1,5 @@
 import linkchecker
+import time
 
 
 def main():
@@ -42,6 +43,9 @@ def main():
         print(f"  Version: {imported_app.version}")
         print(f"  Hash: {imported_app.hash_value}")
         print(f"  Checked Date: {imported_app.date_checked}")
+
+    time.sleep(30)
+    main()
 
 
 if __name__ == "__main__":
