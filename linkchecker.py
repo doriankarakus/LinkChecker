@@ -1,4 +1,5 @@
 import json
+import multiprocessing
 import os
 import requests
 import win32api
@@ -166,3 +167,32 @@ def clear_folder(folder_path):
             os.unlink(item_path)  # Remove files or symlinks
         elif os.path.isdir(item_path):
             shutil.rmtree(item_path)  # Remove directories
+
+
+# Time out testing
+def run_with_timeout(func, timeout):
+    # Define a wrapper function that runs the target function
+    def wrapper(queue):
+        try:
+            result = func()
+            queue.put(result)
+        except Exception as e:
+            queue.put(e)
+
+    while True:
+        queue = multiprocessing.Queue()
+        process = multiprocessing.Process(target=wrapper, args=(queue,))
+        process.start()
+        process.join(timeout)
+
+        if process.is_alive():
+            process.terminate()
+            process.join()
+            print(f"{func.__name__} timed out and was restarted.")
+        else:
+            result = queue.get()
+            if isinstance(result, Exception):
+                print(f"An error occurred: {result}")
+            else:
+                print(f"{func.__name__} completed successfully.")
+                break

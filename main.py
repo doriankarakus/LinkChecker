@@ -56,4 +56,6 @@ def main():
 
 
 if __name__ == "__main__":
+    # testing timeouts
+    # linkchecker.run_with_timeout(main(), 40)
     main()
