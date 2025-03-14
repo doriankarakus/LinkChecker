@@ -1,0 +1,66 @@
+[
+    {
+        "url": "https://staticsint.teams.cdn.office.net/production-windows-x64/1.8.00.2353/Teams_windows_x64.exe",
+        "name": "Teams",
+        "version": "error",
+        "hash_value": "error",
+        "date_checked": "error"
+    },
+    {
+        "url": "https://app.drivestrike.com/static/drivestrike/setup.exe",
+        "name": "DriveStrike",
+        "version": "error",
+        "hash_value": "error",
+        "date_checked": "error"
+    },
+    {
+        "url": "https://downloads.poly.com/headsets/PlantronicsHubInstaller.exe",
+        "name": "PlantronicsHubInstaller",
+        "version": "error",
+        "hash_value": "error",
+        "date_checked": "error"
+    },
+    {
+        "url": "https://builds.getgocdn.com/builds/calendarintegration/outlook/G2M/setup.exe",
+        "name": "GoToMeeting Outlook Plugin",
+        "version": "error",
+        "hash_value": "error",
+        "date_checked": "error"
+    },
+    {
+        "url": "https://go.skype.com/windows.desktop.download",
+        "name": "Skype",
+        "version": "error",
+        "hash_value": "error",
+        "date_checked": "error"
+    },
+    {
+        "url": "https://mega.nz/MEGAsyncSetup64.exe",
+        "name": "Mega64",
+        "version": "error",
+        "hash_value": "error",
+        "date_checked": "error"
+    },
+    {
+        "url": "https://assets.nextiva.com/download/Nextiva-win.exe",
+        "name": "Nextiva",
+        "version": "error",
+        "hash_value": "error",
+        "date_checked": "error"
+    },
+    {
+        "url": "https://portal.galacticscan.com/go/89/GalacticScan.exe",
+        "name": "GalacticScan",
+        "version": "error",
+        "hash_value": "error",
+        "date_checked": "error"
+    },
+    {
+        "url": "https://software.vc.logitech.com/downloads/tune/LogiTuneInstall.exe",
+        "name": "LogiTune",
+        "version": "error",
+        "hash_value": "error",
+        "date_checked": "error"
+    }
+
+]

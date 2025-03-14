@@ -1,0 +1,93 @@
+[
+    {
+        "url": "https://staticsint.teams.cdn.office.net/production-windows-x64/1.8.00.2353/Teams_windows_x64.exe",
+        "name": "Teams",
+        "version": "1.8.0.2353",
+        "hash_value": "f59322541ca1db6e407a70e3c874174cc856869ca4c828ffcad72531d582a59d",
+        "date_checked": "2025-03-14 10:29:50"
+    },
+    {
+        "url": "https://app.drivestrike.com/static/drivestrike/setup.exe",
+        "name": "DriveStrike",
+        "version": "1.6.12.0",
+        "hash_value": "2b512772af02d0f842802d25ecf2bea25516af8fe0af1f101d275b607517b1e0",
+        "date_checked": "2025-03-14 10:29:51"
+    },
+    {
+        "url": "https://downloads.poly.com/headsets/PlantronicsHubInstaller.exe",
+        "name": "PlantronicsHubInstaller",
+        "version": "3.25.-11229.37251",
+        "hash_value": "e386741608604faea8ebb51c8c6bcdbf5493ff006968f0234751745e5ec5cd4c",
+        "date_checked": "2025-03-14 10:29:55"
+    },
+    {
+        "url": "https://builds.getgocdn.com/builds/calendarintegration/outlook/G2M/setup.exe",
+        "name": "GoToMeeting Outlook Plugin",
+        "version": "1.7.45.0",
+        "hash_value": "689c62dabafb5cefaaf701178b0103fc4e930a200f25554b6f514af4e3e02142",
+        "date_checked": "2025-03-14 10:29:56"
+    },
+    {
+        "url": "https://go.skype.com/windows.desktop.download",
+        "name": "Skype",
+        "version": "8.138.0.203",
+        "hash_value": "98ae9c676aa45e0b0e72e22e1cc8cf25dfffe4f5a54e09847dcea5df227a1f5b",
+        "date_checked": "2025-03-14 10:30:00"
+    },
+    {
+        "url": "https://mega.nz/MEGAsyncSetup64.exe",
+        "name": "Mega64",
+        "version": "5.9.0.3",
+        "hash_value": "529b2a7a72eb532e309a57d0599a3552649082345f9c1e0353d487b4a7f6d771",
+        "date_checked": "2025-03-14 10:30:05"
+    },
+    {
+        "url": "https://assets.nextiva.com/download/Nextiva-win.exe",
+        "name": "Nextiva",
+        "version": "1.17.0.0",
+        "hash_value": "009d73154ecea83a51b3c7f815188d81d5f419da677cc85dac982c85bca5ea8f",
+        "date_checked": "2025-03-14 10:30:08"
+    },
+    {
+        "url": "https://portal.galacticscan.com/go/89/GalacticScan.exe",
+        "name": "GalacticScan",
+        "version": "1.26.62.0",
+        "hash_value": "79c6cba28a337018e93892a2cbc6b91e1227eb4119b982f082a3d25aa55dace8",
+        "date_checked": "2025-03-14 10:30:10"
+    },
+    {
+        "url": "https://software.vc.logitech.com/downloads/tune/LogiTuneInstall.exe",
+        "name": "LogiTune",
+        "version": "3.9.168.0",
+        "hash_value": "f8824885d8c5cc6512884985e72b24e84fe50da62cd0ad8b9834e04b959a8e72",
+        "date_checked": "2025-03-14 10:30:17"
+    },
+    {
+        "url": "https://staticsint.teams.cdn.office.net/production-windows-x64/1.8.00.2353/Teams_windows_x64.exe",
+        "name": "Teams",
+        "version": "1.8.0.2353",
+        "hash_value": "f59322541ca1db6e407a70e3c874174cc856869ca4c828ffcad72531d582a59d",
+        "date_checked": "2025-03-14 10:33:00"
+    },
+    {
+        "url": "https://app.drivestrike.com/static/drivestrike/setup.exe",
+        "name": "DriveStrike",
+        "version": "1.6.12.0",
+        "hash_value": "2b512772af02d0f842802d25ecf2bea25516af8fe0af1f101d275b607517b1e0",
+        "date_checked": "2025-03-14 10:33:02"
+    },
+    {
+        "url": "https://software.vc.logitech.com/downloads/tune/LogiTuneInstall.exe",
+        "name": "LogiTune",
+        "version": "3.9.168.0",
+        "hash_value": "f8824885d8c5cc6512884985e72b24e84fe50da62cd0ad8b9834e04b959a8e72",
+        "date_checked": "2025-03-14 10:33:29"
+    },
+    {
+        "url": "https://mega.nz/MEGAsyncSetup32.exe",
+        "name": "Mega32",
+        "version": "5.9.0.3",
+        "hash_value": "2e6ff957db65870b8c5c95016c66937b2d1ca0ca52cf29a0645c7edc8a711e21",
+        "date_checked": "2025-03-14 11:10:38"
+    }
+]
