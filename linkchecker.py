@@ -4,6 +4,7 @@ import requests
 import win32api
 from datetime import datetime
 import hashlib
+import shutil
 
 
 class App:
@@ -67,7 +68,7 @@ def import_apps_from_file(filename):
 # fixed issue but keeping for documentation
 
 
-def download_installer(app, folder_name="Superdump"):
+def download_installer(app, folder_name):
     # Ensure the folder exists
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
@@ -114,9 +115,9 @@ def update_app_version_and_date(file_path, app):
         except:
             print(f"Error updating app version and date: {e}")
 
-        print(f"Updated App Version: {app.version}")
-        print(f"Updated Date Checked: {app.date_checked}")
-        print(f"Updated Hash Checked: {app.hash_value}")
+        print(f"Current App Version: {app.version}")
+        print(f"Current Date Checked: {app.date_checked}")
+        print(f"Current Hash Checked: {app.hash_value}")
         # Delete the file after processing
         os.remove(file_path)
         print(f"Deleted file: {file_path}")
@@ -146,7 +147,22 @@ def return_curr(app_data_path, app_data_done_path):
     # Write contents to app_data.json
     with open(app_data_path, "w") as app_file:
         json.dump(done_data, app_file, indent=4)
+    clear_done(app_data_done_path)
 
+
+def clear_done(app_data_done_path):
     # Clear the contents of app_data_done.json
     with open(app_data_done_path, "w") as file:
         file.write("[]")
+
+
+def clear_folder(folder_path):
+    # List all files and directories in the specified folder
+    for item in os.listdir(folder_path):
+        item_path = os.path.join(folder_path, item)
+
+        # Check if it's a file or directory and delete accordingly
+        if os.path.isfile(item_path) or os.path.islink(item_path):
+            os.unlink(item_path)  # Remove files or symlinks
+        elif os.path.isdir(item_path):
+            shutil.rmtree(item_path)  # Remove directories

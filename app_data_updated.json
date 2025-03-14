@@ -89,5 +89,26 @@
         "version": "5.9.0.3",
         "hash_value": "2e6ff957db65870b8c5c95016c66937b2d1ca0ca52cf29a0645c7edc8a711e21",
         "date_checked": "2025-03-14 11:10:38"
+    },
+    {
+        "url": "https://staticsint.teams.cdn.office.net/production-windows-x64/1.8.00.2353/Teams_windows_x64.exe",
+        "name": "Teams",
+        "version": "1.8.0.2353",
+        "hash_value": "f59322541ca1db6e407a70e3c874174cc856869ca4c828ffcad72531d582a59d",
+        "date_checked": "2025-03-14 12:29:08"
+    },
+    {
+        "url": "https://app.drivestrike.com/static/drivestrike/setup.exe",
+        "name": "DriveStrike",
+        "version": "1.6.12.0",
+        "hash_value": "2b512772af02d0f842802d25ecf2bea25516af8fe0af1f101d275b607517b1e0",
+        "date_checked": "2025-03-14 12:29:10"
+    },
+    {
+        "url": "https://downloads.poly.com/headsets/PlantronicsHubInstaller.exe",
+        "name": "PlantronicsHubInstaller",
+        "version": "3.25.-11229.37251",
+        "hash_value": "e386741608604faea8ebb51c8c6bcdbf5493ff006968f0234751745e5ec5cd4c",
+        "date_checked": "2025-03-14 12:29:14"
     }
 ]

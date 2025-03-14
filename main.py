@@ -16,23 +16,30 @@ def main():
 
     # Define the filename
     filename = "app_data.json"
+    filename_done = "app_data_done.json"
+    filename_updated = "app_data_updated.json"
+    foldername = "Superdump"
 
     # Export the app object to a file
     # export_app_to_file(app, filename)
 
     # Import all the app objects from the file
     imported_apps = linkchecker.import_apps_from_file(filename)
+    linkchecker.clear_done(filename_done)
+    linkchecker.clear_folder(foldername)
 
     for app in imported_apps:
-        file_path = linkchecker.download_installer(app)
+        file_path = linkchecker.download_installer(app, foldername)
         old_version = app.version
+        old_hash = app.hash_value
         linkchecker.update_app_version_and_date(file_path, app)
-        linkchecker.export_app_to_file(app, "app_data_done.json")
-        if old_version != app.version:
+        linkchecker.export_app_to_file(app, filename_done)
+        if old_version != app.version or old_hash != app.hash_value:
             print(f"Version has changed from {old_version} to {app.version}")
-            linkchecker.export_app_to_file(app, "app_data_updated.json")
+            print(f"Hash has changed from {old_hash} to {app.hash_value}")
+            linkchecker.export_app_to_file(app, filename_updated)
 
-    linkchecker.return_curr("app_data.json", "app_data_done.json")
+    linkchecker.return_curr(filename, filename_done)
 
     # Print the imported apps' attributes to verify
     print("Imported App Details:")
