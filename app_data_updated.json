@@ -110,5 +110,75 @@
         "version": "3.25.-11229.37251",
         "hash_value": "e386741608604faea8ebb51c8c6bcdbf5493ff006968f0234751745e5ec5cd4c",
         "date_checked": "2025-03-14 12:29:14"
+    },
+    {
+        "url": "https://www.nchsoftware.com/capture/debutpsetup.exe",
+        "name": "NCHSoftware",
+        "version": "0.0.0.0",
+        "hash_value": "08f6bc57ec86ac3d73eed5326e395e2ad5f32b40da7a0e682ed5410affe8db21",
+        "date_checked": "2025-03-17 09:48:48"
+    },
+    {
+        "url": "https://download.visualstudio.microsoft.com/download/pr/c7dac50a-e3e8-40f6-bbb2-9cc4e3dfcabe/1821577409C35B2B9505AC833E246376CC68A8262972100444010B57226F0940/VC_redist.x64.exe",
+        "name": "VS Microsoft Redist 64",
+        "version": "14.42.-31103.0",
+        "hash_value": "1821577409c35b2b9505ac833e246376cc68a8262972100444010b57226f0940",
+        "date_checked": "2025-03-17 09:52:41"
+    },
+    {
+        "url": "https://download-mac.grammarly.com/Grammarly.dmg",
+        "name": "Grammarly MAC",
+        "version": "DMG",
+        "hash_value": "859732186d4003a509d04e6765bbfb9e19f4230275224978b85552475df3e004",
+        "date_checked": "2025-03-17 10:07:44"
+    },
+    {
+        "url": "https://download.dnsfilter.com/User_Agent/MacOS/DNSFilter%20Agent-Installer.pkg",
+        "name": "DNSFilter MAC",
+        "version": "DMG",
+        "hash_value": "8b25b09cfc89fe457d6fa18813226d244f12a72c5ea817cf5501cd4908adc8bd",
+        "date_checked": "2025-03-17 10:07:45"
+    },
+    {
+        "url": "https://downloads.paessler.com/tools/snmp-tester/Paessler%20SNMP%20Tester.zip",
+        "name": "SNMP Tester",
+        "version": "ZIP",
+        "hash_value": "d616408a0c82a88c760731e4c72c6f44759ca532a070adff37a000aa279c249a",
+        "date_checked": "2025-03-17 10:07:47"
+    },
+    {
+        "url": "https://go.skype.com/windows.desktop.download",
+        "name": "Skype",
+        "version": "Error",
+        "hash_value": "Error",
+        "date_checked": "2025-03-17 10:07:56"
+    },
+    {
+        "url": "https://go.skype.com/windows.desktop.download",
+        "name": "Skype",
+        "version": "8.138.0.203",
+        "hash_value": "98ae9c676aa45e0b0e72e22e1cc8cf25dfffe4f5a54e09847dcea5df227a1f5b",
+        "date_checked": "2025-03-17 10:13:21"
+    },
+    {
+        "url": "https://download.dnsfilter.com/User_Agent/MacOS/DNSFilter%20Agent-Installer.pkg",
+        "name": "DNSFilter MAC",
+        "version": "DMG",
+        "hash_value": "8b25b09cfc89fe457d6fa18813226d244f12a72c5ea817cf5501cd4908adc8bd",
+        "date_checked": "2025-03-17 10:21:06"
+    },
+    {
+        "url": "https://download.dnsfilter.com/User_Agent/MacOS/DNSFilter%20Agent-Installer.pkg",
+        "name": "DNSFilter MAC",
+        "version": "DMG",
+        "hash_value": "8b25b09cfc89fe457d6fa18813226d244f12a72c5ea817cf5501cd4908adc8bd",
+        "date_checked": "2025-03-17 10:24:35"
+    },
+    {
+        "url": "https://download.dnsfilter.com/User_Agent/MacOS/DNSFilter%20Agent-Installer.pkg",
+        "name": "DNSFilter MAC",
+        "version": "PKG",
+        "hash_value": "8b25b09cfc89fe457d6fa18813226d244f12a72c5ea817cf5501cd4908adc8bd",
+        "date_checked": "2025-03-17 10:27:22"
     }
 ]

@@ -97,34 +97,155 @@ def download_installer(app, folder_name):
 
 
 def update_app_version_and_date(file_path, app):
-    try:
-
-        # Get file version info
-        print(file_path)
-        info = win32api.GetFileVersionInfo(file_path, "\\")
-
-        # Extract version numbers
-        ms = info["FileVersionMS"]
-        ls = info["FileVersionLS"]
-        version = f"{ms >> 16}.{ms & 0xFFFF}.{ls >> 16}.{ls & 0xFFFF}"
-
+    if not os.path.exists(file_path):
+        print(f"File not found: {file_path}")
+    if file_path.endswith(".exe"):
         try:
-            # Update the App object with the new version and date
-            app.version = version
-            app.date_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            app.hash_value = get_file_hash(file_path)
-        except:
-            print(f"Error updating app version and date: {e}")
 
-        print(f"Current App Version: {app.version}")
-        print(f"Current Date Checked: {app.date_checked}")
-        print(f"Current Hash Checked: {app.hash_value}")
-        # Delete the file after processing
-        os.remove(file_path)
-        print(f"Deleted file: {file_path}")
+            # Get file version info
+            print(file_path)
+            info = win32api.GetFileVersionInfo(file_path, "\\")
 
-    except Exception as e:
-        print(f"Error updating app object: {e}")
+            # Extract version numbers
+            ms = info["FileVersionMS"]
+            ls = info["FileVersionLS"]
+            version = f"{ms >> 16}.{ms & 0xFFFF}.{ls >> 16}.{ls & 0xFFFF}"
+
+            try:
+                # Update the App object with the new version and date
+                app.version = version
+                app.date_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                app.hash_value = get_file_hash(file_path)
+            except:
+                print(f"Error updating exe app version and date: {e}")
+
+            print(f"Current App Version: {app.version}")
+            print(f"Current Date Checked: {app.date_checked}")
+            print(f"Current Hash Checked: {app.hash_value}")
+            # Delete the file after processing
+            os.remove(file_path)
+            print(f"Deleted file: {file_path}")
+
+        except Exception as e:
+            print(f"Error updating exe app object: {e}")
+    elif file_path.endswith(".msi") or file_path.endswith(".msix"):
+        try:
+            # Get file version info
+            print(file_path)
+            version = "MSI"
+            try:
+                # Update the App object with the new version and date
+                app.version = version
+                app.date_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                app.hash_value = get_file_hash(file_path)
+            except:
+                print(f"Error updating msi or msix app version and date: {e}")
+
+            print(f"Current App Version: {app.version}")
+            print(f"Current Date Checked: {app.date_checked}")
+            print(f"Current Hash Checked: {app.hash_value}")
+            # Delete the file after processing
+            os.remove(file_path)
+            print(f"Deleted file: {file_path}")
+
+        except Exception as e:
+            print(f"Error updating msi or msix app object: {e}")
+    elif file_path.endswith(".zip"):
+        try:
+            # Get file version info
+            print(file_path)
+            version = "ZIP"
+            try:
+                # Update the App object with the new version and date
+                app.version = version
+                app.date_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                app.hash_value = get_file_hash(file_path)
+            except:
+                print(f"Error updating zip app version and date: {e}")
+
+            print(f"Current App Version: {app.version}")
+            print(f"Current Date Checked: {app.date_checked}")
+            print(f"Current Hash Checked: {app.hash_value}")
+            # Delete the file after processing
+            os.remove(file_path)
+            print(f"Deleted file: {file_path}")
+
+        except Exception as e:
+            print(f"Error updating zip app object: {e}")
+    elif file_path.endswith(".dmg"):
+        try:
+            # Get file version info
+            print(file_path)
+            version = "DMG"
+            try:
+                # Update the App object with the new version and date
+                app.version = version
+                app.date_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                app.hash_value = get_file_hash(file_path)
+            except:
+                print(f"Error updating dmg app version and date: {e}")
+
+            print(f"Current App Version: {app.version}")
+            print(f"Current Date Checked: {app.date_checked}")
+            print(f"Current Hash Checked: {app.hash_value}")
+            # Delete the file after processing
+            os.remove(file_path)
+            print(f"Deleted file: {file_path}")
+
+        except Exception as e:
+            print(f"Error updating dmg app object: {e}")
+    elif file_path.endswith(".pkg"):
+        try:
+            # Get file version info
+            print(file_path)
+            version = "PKG"
+            try:
+                # Update the App object with the new version and date
+                app.version = version
+                app.date_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                app.hash_value = get_file_hash(file_path)
+            except:
+                print(f"Error updating pkg app version and date: {e}")
+
+            print(f"Current App Version: {app.version}")
+            print(f"Current Date Checked: {app.date_checked}")
+            print(f"Current Hash Checked: {app.hash_value}")
+            # Delete the file after processing
+            os.remove(file_path)
+            print(f"Deleted file: {file_path}")
+
+        except Exception as e:
+            print(f"Error updating pkg app object: {e}")
+    else:
+        try:
+            # Get file version info
+            print(file_path)
+            info = win32api.GetFileVersionInfo(file_path, "\\")
+
+            # Extract version numbers
+            ms = info["FileVersionMS"]
+            ls = info["FileVersionLS"]
+            version = f"{ms >> 16}.{ms & 0xFFFF}.{ls >> 16}.{ls & 0xFFFF}"
+
+            try:
+                # Update the App object with the new version and date
+                app.version = version
+                app.date_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                app.hash_value = get_file_hash(file_path)
+            except:
+                print("File type may not supported")
+                print(f"Error updating app version and date: {e}")
+
+            print(f"Current App Version: {app.version}")
+            print(f"Current Date Checked: {app.date_checked}")
+            print(f"Current Hash Checked: {app.hash_value}")
+            # Delete the file after processing
+            os.remove(file_path)
+            print(f"Deleted file: {file_path}")
+
+        except Exception as e:
+            print("File type may not supported")
+            print(f"Error updating app object: {e}")
 
 
 def get_file_hash(file_path, hash_function="sha256"):
