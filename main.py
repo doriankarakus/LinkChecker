@@ -26,12 +26,17 @@ def main():
     # Import all the app objects from the file
     imported_apps = linkchecker.import_apps_from_file(filename)
     linkchecker.clear_done(filename_done)
-    linkchecker.clear_folder(foldername)
 
     for app in imported_apps:
-        file_path = linkchecker.download_installer(app, foldername)
+        linkchecker.clear_folder(foldername)
         old_version = app.version
         old_hash = app.hash_value
+        file_path = linkchecker.run_with_timeout(
+            linkchecker.download_installer_wrapper, (app, foldername), 30
+        )
+        if file_path == "Failed":
+            print(f"Timeout for {app.name}")
+            continue
         linkchecker.update_app_version_and_date(file_path, app)
         linkchecker.export_app_to_file(app, filename_done)
         if old_version != app.version or old_hash != app.hash_value:

@@ -291,18 +291,19 @@ def clear_folder(folder_path):
 
 
 # Time out testing
-def run_with_timeout(func, timeout):
-    # Define a wrapper function that runs the target function
-    def wrapper(queue):
-        try:
-            result = func()
-            queue.put(result)
-        except Exception as e:
-            queue.put(e)
+def download_installer_wrapper(app, folder_name, queue):
+    try:
+        result = download_installer(app, folder_name)
+        queue.put(result)
+    except Exception as e:
+        queue.put(e)
 
-    while True:
+
+def run_with_timeout(func, args, timeout):
+    trys = 0
+    while trys < 3:
         queue = multiprocessing.Queue()
-        process = multiprocessing.Process(target=wrapper, args=(queue,))
+        process = multiprocessing.Process(target=func, args=(*args, queue))
         process.start()
         process.join(timeout)
 
@@ -310,10 +311,14 @@ def run_with_timeout(func, timeout):
             process.terminate()
             process.join()
             print(f"{func.__name__} timed out and was restarted.")
+            trys += 1
+            if trys == 3:
+                print(f"{func.__name__} failed after 3 attempts.")
+                return "Failed"
         else:
             result = queue.get()
             if isinstance(result, Exception):
                 print(f"An error occurred: {result}")
             else:
                 print(f"{func.__name__} completed successfully.")
-                break
+                return result
