@@ -236,5 +236,61 @@
         "version": "1.8.0.6262",
         "hash_value": "79b5369462d1355e54de781a88d11776b90f62bac464746ebbea97b4f3dd7cfd",
         "date_checked": "2025-03-17 19:49:30"
+    },
+    {
+        "url": "https://download-mac.grammarly.com/Grammarly.dmg",
+        "name": "Grammarly MAC",
+        "version": "DMG",
+        "hash_value": "54727b80092655e49eaa3ab06bdc29b63d5bd08711e58aa5cbb01a00bd68a1de",
+        "date_checked": "2025-03-19 20:58:18"
+    },
+    {
+        "url": "https://download-mac.grammarly.com/Grammarly.dmg",
+        "name": "Grammarly MAC",
+        "version": "DMG",
+        "hash_value": "54727b80092655e49eaa3ab06bdc29b63d5bd08711e58aa5cbb01a00bd68a1de",
+        "date_checked": "2025-03-19 21:40:36"
+    },
+    {
+        "url": "https://downloads.paessler.com/tools/snmp-tester/Paessler%20SNMP%20Tester.zip",
+        "name": "SNMP Tester Unzipped",
+        "version": "Paessler SNMP Tester Setup.exe",
+        "hash_value": "bcf89265a7c83bb56aac394007604c3a6134bc003eb2e6f479e9ff0910643dc2",
+        "date_checked": "2025-03-19 21:40:40"
+    },
+    {
+        "url": "https://download-mac.grammarly.com/Grammarly.dmg",
+        "name": "Grammarly MAC",
+        "version": "DMG",
+        "hash_value": "54727b80092655e49eaa3ab06bdc29b63d5bd08711e58aa5cbb01a00bd68a1de",
+        "date_checked": "2025-03-19 21:53:40"
+    },
+    {
+        "url": "https://staticsint.teams.cdn.office.net/production-windows-x64/1.8.00.2353/Teams_windows_x64.exe",
+        "name": "NameVersion:Teams",
+        "version": "64",
+        "hash_value": "f59322541ca1db6e407a70e3c874174cc856869ca4c828ffcad72531d582a59d",
+        "date_checked": "2025-03-19 21:55:01"
+    },
+    {
+        "url": "https://download-mac.grammarly.com/Grammarly.dmg",
+        "name": "Grammarly MAC",
+        "version": "DMG",
+        "hash_value": "54727b80092655e49eaa3ab06bdc29b63d5bd08711e58aa5cbb01a00bd68a1de",
+        "date_checked": "2025-03-19 21:55:05"
+    },
+    {
+        "url": "https://downloads.paessler.com/tools/snmp-tester/Paessler%20SNMP%20Tester.zip",
+        "name": "SNMP Tester Unzipped",
+        "version": "Paessler SNMP Tester Setup.exe",
+        "hash_value": "bcf89265a7c83bb56aac394007604c3a6134bc003eb2e6f479e9ff0910643dc2",
+        "date_checked": "2025-03-19 21:55:10"
+    },
+    {
+        "url": "https://go.skype.com/windows.desktop.download",
+        "name": "Skype",
+        "version": "8.138.0.209",
+        "hash_value": "d2362aff3e33d131611d72236df9b32908aa62fa388f273856b8ec5a84f0edf0",
+        "date_checked": "2025-03-19 21:55:31"
     }
 ]

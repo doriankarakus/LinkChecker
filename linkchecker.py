@@ -6,6 +6,7 @@ import win32api
 from datetime import datetime
 import hashlib
 import shutil
+import re
 
 
 class App:
@@ -60,13 +61,7 @@ def import_apps_from_file(filename):
             for app in app_list
         ]
     else:
-        return print("File does not exist")
-
-
-# FIX THIS. The file path is create by combining the file name and the folder name. The folder name is not passed as a parameter
-# Easy fix. Make the folder name based on the file name and have it delete and recreate the folder each time.
-# Once in folder search folder for any files and whatever is found is the file path that is passed down into update function
-# fixed issue but keeping for documentation
+        return print(f"File does not exist: {filename}")
 
 
 def download_installer(app, folder_name):
@@ -99,7 +94,21 @@ def download_installer(app, folder_name):
 def update_app_version_and_date(file_path, app):
     if not os.path.exists(file_path):
         print(f"File not found: {file_path}")
-    if file_path.endswith(".exe"):
+    if "NameVersion" in app.name:
+        try:
+            digits = re.findall(r"\d+", file_path)
+
+            # Combine all found digits into a string
+            version = "".join(digits)
+
+            # Set the app.version to the extracted numerical string
+            app.version = version
+            app.date_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            app.hash_value = get_file_hash(file_path)
+
+        except Exception as e:
+            print(f"Error updating app version and date: {e}")
+    elif file_path.endswith(".exe"):
         try:
 
             # Get file version info
@@ -119,13 +128,6 @@ def update_app_version_and_date(file_path, app):
             except:
                 print(f"Error updating exe app version and date: {e}")
 
-            print(f"Current App Version: {app.version}")
-            print(f"Current Date Checked: {app.date_checked}")
-            print(f"Current Hash Checked: {app.hash_value}")
-            # Delete the file after processing
-            os.remove(file_path)
-            print(f"Deleted file: {file_path}")
-
         except Exception as e:
             print(f"Error updating exe app object: {e}")
     elif file_path.endswith(".msi") or file_path.endswith(".msix"):
@@ -141,37 +143,33 @@ def update_app_version_and_date(file_path, app):
             except:
                 print(f"Error updating msi or msix app version and date: {e}")
 
-            print(f"Current App Version: {app.version}")
-            print(f"Current Date Checked: {app.date_checked}")
-            print(f"Current Hash Checked: {app.hash_value}")
-            # Delete the file after processing
-            os.remove(file_path)
-            print(f"Deleted file: {file_path}")
-
         except Exception as e:
             print(f"Error updating msi or msix app object: {e}")
     elif file_path.endswith(".zip"):
         try:
-            # Get file version info
-            print(file_path)
-            version = "ZIP"
-            try:
-                # Update the App object with the new version and date
-                app.version = version
+            # Extract the zip file
+            extract_folder = os.path.splitext(file_path)[0]  # Remove .zip extension
+            os.makedirs(extract_folder, exist_ok=True)
+            shutil.unpack_archive(file_path, extract_folder)
+            print(f"Extracted {file_path} to {extract_folder}")
+
+            # Check if app.version is not "ZIP"
+            if app.version != "ZIP":
+                target_file_path = os.path.join(extract_folder, app.version)
+                if os.path.exists(target_file_path):
+                    # Compute the hash of the target file
+                    app.hash_value = get_file_hash(target_file_path)
+                    app.date_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                else:
+                    print(f"Target file not found: {target_file_path}")
+            else:
+                # Default behavior for ZIP
+                app.version = "ZIP"
                 app.date_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 app.hash_value = get_file_hash(file_path)
-            except:
-                print(f"Error updating zip app version and date: {e}")
-
-            print(f"Current App Version: {app.version}")
-            print(f"Current Date Checked: {app.date_checked}")
-            print(f"Current Hash Checked: {app.hash_value}")
-            # Delete the file after processing
-            os.remove(file_path)
-            print(f"Deleted file: {file_path}")
 
         except Exception as e:
-            print(f"Error updating zip app object: {e}")
+            print(f"Error processing zip file: {e}")
     elif file_path.endswith(".dmg"):
         try:
             # Get file version info
@@ -184,13 +182,6 @@ def update_app_version_and_date(file_path, app):
                 app.hash_value = get_file_hash(file_path)
             except:
                 print(f"Error updating dmg app version and date: {e}")
-
-            print(f"Current App Version: {app.version}")
-            print(f"Current Date Checked: {app.date_checked}")
-            print(f"Current Hash Checked: {app.hash_value}")
-            # Delete the file after processing
-            os.remove(file_path)
-            print(f"Deleted file: {file_path}")
 
         except Exception as e:
             print(f"Error updating dmg app object: {e}")
@@ -207,13 +198,6 @@ def update_app_version_and_date(file_path, app):
             except:
                 print(f"Error updating pkg app version and date: {e}")
 
-            print(f"Current App Version: {app.version}")
-            print(f"Current Date Checked: {app.date_checked}")
-            print(f"Current Hash Checked: {app.hash_value}")
-            # Delete the file after processing
-            os.remove(file_path)
-            print(f"Deleted file: {file_path}")
-
         except Exception as e:
             print(f"Error updating pkg app object: {e}")
     else:
@@ -226,26 +210,26 @@ def update_app_version_and_date(file_path, app):
             ms = info["FileVersionMS"]
             ls = info["FileVersionLS"]
             version = f"{ms >> 16}.{ms & 0xFFFF}.{ls >> 16}.{ls & 0xFFFF}"
-
-            try:
-                # Update the App object with the new version and date
-                app.version = version
-                app.date_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                app.hash_value = get_file_hash(file_path)
-            except:
-                print("File type may not supported")
-                print(f"Error updating app version and date: {e}")
-
-            print(f"Current App Version: {app.version}")
-            print(f"Current Date Checked: {app.date_checked}")
-            print(f"Current Hash Checked: {app.hash_value}")
-            # Delete the file after processing
-            os.remove(file_path)
-            print(f"Deleted file: {file_path}")
-
-        except Exception as e:
+        except:
             print("File type may not supported")
-            print(f"Error updating app object: {e}")
+            version = "Not Supported"
+            app.version = version
+            print(f"Error updating app version and date: {e}")
+        try:
+            # Update the App object
+            app.date_checked = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            app.hash_value = get_file_hash(file_path)
+        except:
+            print("File hash error")
+            print(f"Error updating app version and date: {e}")
+
+    # Print the updated app details
+    print(f"Current App Version: {app.version}")
+    print(f"Current Date Checked: {app.date_checked}")
+    print(f"Current Hash Checked: {app.hash_value}")
+    # Delete the file after processing
+    os.remove(file_path)
+    print(f"Deleted file: {file_path}")
 
 
 def get_file_hash(file_path, hash_function="sha256"):
@@ -290,7 +274,7 @@ def clear_folder(folder_path):
             shutil.rmtree(item_path)  # Remove directories
 
 
-# Time out testing
+# Time out wrapper for download_installer
 def download_installer_wrapper(app, folder_name, queue):
     try:
         result = download_installer(app, folder_name)
@@ -299,6 +283,7 @@ def download_installer_wrapper(app, folder_name, queue):
         queue.put(e)
 
 
+# Time out function
 def run_with_timeout(func, args, timeout):
     trys = 0
     while trys < 3:
