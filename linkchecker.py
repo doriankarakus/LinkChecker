@@ -78,13 +78,14 @@ def download_installer(app, folder_name):
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
     # Download the installer
-    try:
+    try:  # Download the file and return the path
         return os.path.abspath(download_and_find_file(app, folder_name))
 
     except requests.exceptions.RequestException as e:
         print(f"Failed to download the installer: {e}")
 
 
+# Save the downloaded file to the specified folder
 def save_downloaded_file(response, folder_path, file_name):
     file_path = os.path.join(folder_path, file_name)
     with open(file_path, "wb") as file:
@@ -93,6 +94,7 @@ def save_downloaded_file(response, folder_path, file_name):
     return file_path
 
 
+# Download the file and save it to the specified folder
 def download_and_find_file(app, folder_path):
     # Download the file
     response = requests.get(app.url, stream=True)
@@ -113,6 +115,7 @@ def download_and_find_file(app, folder_path):
     return saved_file_path
 
 
+# Update the app version and date checked
 def update_app_version_and_date(file_path, app):
     if not os.path.exists(file_path):
         print(f"File not found: {file_path}")
@@ -254,6 +257,7 @@ def update_app_version_and_date(file_path, app):
     print(f"Deleted file: {file_path}")
 
 
+# Compute the hash of a file
 def get_file_hash(file_path, hash_function="sha256"):
     # Create a hash object
     hash_obj = hashlib.new(hash_function)
@@ -267,6 +271,7 @@ def get_file_hash(file_path, hash_function="sha256"):
     return hash_obj.hexdigest()
 
 
+# Return the current apps to the imports file
 def return_curr(app_data_path, app_data_done_path):
     # Read contents from app_data_done.json
     with open(app_data_done_path, "r") as done_file:
@@ -278,12 +283,14 @@ def return_curr(app_data_path, app_data_done_path):
     clear_done(app_data_done_path)
 
 
+# Clear the contents of app_data_done.json
 def clear_done(app_data_done_path):
     # Clear the contents of app_data_done.json
     with open(app_data_done_path, "w") as file:
         file.write("[]")
 
 
+# Clear the contents of a folder
 def clear_folder(folder_path):
     # List all files and directories in the specified folder
     for item in os.listdir(folder_path):
@@ -298,7 +305,7 @@ def clear_folder(folder_path):
 
 # Time out wrapper for download_installer
 def download_installer_wrapper(app, folder_name, queue):
-    try:
+    try:  # Call the download_installer function
         result = download_installer(app, folder_name)
         queue.put(result)
     except Exception as e:
@@ -307,22 +314,22 @@ def download_installer_wrapper(app, folder_name, queue):
 
 # Time out function
 def run_with_timeout(func, args, timeout):
-    trys = 0
-    while trys < 3:
+    trys = 0  # Try the function up to 3 times
+    while trys < 3:  # Create a queue to store the result
         queue = multiprocessing.Queue()
         process = multiprocessing.Process(target=func, args=(*args, queue))
         process.start()
         process.join(timeout)
-
+        # Check if the process is still running
         if process.is_alive():
             process.terminate()
             process.join()
             print(f"{func.__name__} timed out and was restarted.")
-            trys += 1
+            trys += 1  # If the function fails 3 times, return "Failed"
             if trys == 3:
                 print(f"{func.__name__} failed after 3 attempts.")
                 return "Failed"
-        else:
+        else:  # Get the result from the queue
             result = queue.get()
             if isinstance(result, Exception):
                 print(f"An error occurred: {result}")

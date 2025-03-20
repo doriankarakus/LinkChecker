@@ -14,6 +14,7 @@ def main():
     imported_apps = linkchecker.import_apps_from_file(filename)
     linkchecker.clear_done(filename_done)
 
+    # Iterate through the imported apps and download the installer for each app
     for app in imported_apps:
         linkchecker.clear_folder(foldername)
         old_version = app.version
@@ -54,5 +55,6 @@ def main():
     main()
 
 
+# Run the main function
 if __name__ == "__main__":
     main()
