@@ -32,10 +32,11 @@ def main():
         old_version = app.version
         old_hash = app.hash_value
         file_path = linkchecker.run_with_timeout(
-            linkchecker.download_installer_wrapper, (app, foldername), 30
+            linkchecker.download_installer_wrapper, (app, foldername), 50
         )
         if file_path == "Failed":
             print(f"Timeout for {app.name}")
+            linkchecker.export_app_to_file(app, filename_done)
             continue
         linkchecker.update_app_version_and_date(file_path, app)
         linkchecker.export_app_to_file(app, filename_done)

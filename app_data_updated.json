@@ -180,5 +180,61 @@
         "version": "PKG",
         "hash_value": "8b25b09cfc89fe457d6fa18813226d244f12a72c5ea817cf5501cd4908adc8bd",
         "date_checked": "2025-03-17 10:27:22"
+    },
+    {
+        "url": "https://emsfs.autodesk.com/utility/access/1/installer/latest/AdAccess-installer.exe",
+        "name": "Autodesk Access",
+        "version": "2.13.0.173",
+        "hash_value": "6804e75862ea1bf3f656af78a0d33940912905ad942866826700c9a79835bdaf",
+        "date_checked": "2025-03-17 11:41:14"
+    },
+    {
+        "url": "https://www.goodsync.com/download/GoodSync-vsub-Setup.exe",
+        "name": "GoodSync",
+        "version": "12.8.6.6",
+        "hash_value": "f235d12b45ae7bb4b39cf8de8421d1bd214c2ab3473da9a217e4d8bdcff6a947",
+        "date_checked": "2025-03-17 11:41:44"
+    },
+    {
+        "url": "https://download.dnsfilter.com/User_Agent/MacOS/DNS%20Agent-Installer.pkg",
+        "name": "DNS Agent",
+        "version": "PKG",
+        "hash_value": "3fe20eaae6ddee736b7e424673b129659f8a1447424a081597eba01d8c9a7670",
+        "date_checked": "2025-03-17 11:41:50"
+    },
+    {
+        "url": "https://downloads.cdata.com/cdatabuilds/builds/full/CSDK-A/setup.exe",
+        "name": "Sage UKODBC Driver",
+        "version": "24.0.0.0",
+        "hash_value": "aa560e44e31babfc55f7ac2ef88ac9650ed4f489d6969a80ca1475cb3e8de843",
+        "date_checked": "2025-03-17 11:42:41"
+    },
+    {
+        "url": "https://emsfs.autodesk.com/utility/access/1/installer/latest/AdAccess-installer.exe",
+        "name": "Autodesk Access",
+        "version": "2.13.0.173",
+        "hash_value": "6804e75862ea1bf3f656af78a0d33940912905ad942866826700c9a79835bdaf",
+        "date_checked": "2025-03-17 11:42:59"
+    },
+    {
+        "url": "https://www.goodsync.com/download/GoodSync-vsub-Setup.exe",
+        "name": "GoodSync",
+        "version": "12.8.6.6",
+        "hash_value": "f235d12b45ae7bb4b39cf8de8421d1bd214c2ab3473da9a217e4d8bdcff6a947",
+        "date_checked": "2025-03-17 11:43:21"
+    },
+    {
+        "url": "https://download.dnsfilter.com/User_Agent/MacOS/DNS%20Agent-Installer.pkg",
+        "name": "DNS Agent",
+        "version": "PKG",
+        "hash_value": "3fe20eaae6ddee736b7e424673b129659f8a1447424a081597eba01d8c9a7670",
+        "date_checked": "2025-03-17 11:43:26"
+    },
+    {
+        "url": "https://staticsint.teams.cdn.office.net/production-windows-x64/1.8.00.6262/Teams_windows_x64.exe",
+        "name": "teams",
+        "version": "1.8.0.6262",
+        "hash_value": "79b5369462d1355e54de781a88d11776b90f62bac464746ebbea97b4f3dd7cfd",
+        "date_checked": "2025-03-17 19:49:30"
     }
 ]
