@@ -9,6 +9,7 @@ import shutil
 import re
 
 
+# Define the App class
 class App:
     def __init__(self, url, name, version, hash_value, date_checked):
         self.url = url
@@ -18,16 +19,20 @@ class App:
         self.date_checked = date_checked
 
 
+# Creates an App object
 def create_app(url, name, version, hash_value, date_checked):
     return App(url, name, version, hash_value, date_checked)
 
 
+# Exports the app object to a file
 def export_app_to_file(app, filename):
     # Check if the file already exists
     if os.path.exists(filename):
         # Read the existing data
         with open(filename, "r") as file:
             app_list = json.load(file)
+
+    # If the file doesn't exist, create an empty list
     else:
         app_list = []
 
@@ -39,6 +44,7 @@ def export_app_to_file(app, filename):
         "hash_value": app.hash_value,
         "date_checked": app.date_checked,
     }
+    # Append the new app data to the list
     app_list.append(app_data)
 
     # Write the updated list back to the file
@@ -46,7 +52,9 @@ def export_app_to_file(app, filename):
         json.dump(app_list, file, indent=4)
 
 
+# Imports the app objects from a file
 def import_apps_from_file(filename):
+    # Check if the file exists
     if os.path.exists(filename):
         with open(filename, "r") as file:
             app_list = json.load(file)
@@ -64,31 +72,45 @@ def import_apps_from_file(filename):
         return print(f"File does not exist: {filename}")
 
 
+# Downloads the installer from the app's URL
 def download_installer(app, folder_name):
     # Ensure the folder exists
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
-
-    # Get the file name from the URL
-    file_name = os.path.basename(app.url)
-
-    # Full path for where the file will be saved
-    file_path = os.path.join(folder_name, file_name)
-
     # Download the installer
     try:
-        response = requests.get(app.url, stream=True)
-        response.raise_for_status()  # Raise an error for bad responses
-
-        with open(file_path, "wb") as file:
-            for chunk in response.iter_content(chunk_size=8192):
-                file.write(chunk)
-
-        print(f"Downloaded {file_name} to {file_path}")
-        return os.path.abspath(file_path)
+        return os.path.abspath(download_and_find_file(app, folder_name))
 
     except requests.exceptions.RequestException as e:
         print(f"Failed to download the installer: {e}")
+
+
+def save_downloaded_file(response, folder_path, file_name):
+    file_path = os.path.join(folder_path, file_name)
+    with open(file_path, "wb") as file:
+        for chunk in response.iter_content(chunk_size=8192):
+            file.write(chunk)
+    return file_path
+
+
+def download_and_find_file(app, folder_path):
+    # Download the file
+    response = requests.get(app.url, stream=True)
+    response.raise_for_status()
+
+    # Define a file name based on the URL or a fixed name
+    file_name = app.url.split("/")[-1]
+
+    # Save the downloaded file to the specified folder
+    saved_file_path = save_downloaded_file(response, folder_path, file_name)
+
+    # Confirm the file was saved
+    if os.path.exists(saved_file_path):
+        print(f"Downloaded and saved file: {saved_file_path}")
+    else:
+        print("Failed to save the file.")
+
+    return saved_file_path
 
 
 def update_app_version_and_date(file_path, app):
