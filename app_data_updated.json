@@ -299,5 +299,12 @@
         "version": "10.131.3.35390",
         "hash_value": "305ffd5524d63f1b80c411a907844990673a11fe7e9413f97bdf7de6fc8574f5",
         "date_checked": "2025-03-19 23:04:00"
+    },
+    {
+        "url": "https://go.skype.com/windows.desktop.download",
+        "name": "Skype",
+        "version": "8.138.0.209",
+        "hash_value": "0bffbb226c883474e2770e5f360c08bf38ab40283fd02a7537f2f8577b5d6aa4",
+        "date_checked": "2025-03-21 13:08:51"
     }
 ]

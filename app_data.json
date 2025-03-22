@@ -4,118 +4,118 @@
         "name": "NameVersion:Teams",
         "version": "64",
         "hash_value": "f59322541ca1db6e407a70e3c874174cc856869ca4c828ffcad72531d582a59d",
-        "date_checked": "2025-03-19 23:03:40"
+        "date_checked": "2025-03-21 14:01:07"
     },
     {
         "url": "https://win.desktop.evernote.com/builds/Evernote-latest.exe",
         "name": "Evernote",
         "version": "10.131.3.35390",
         "hash_value": "305ffd5524d63f1b80c411a907844990673a11fe7e9413f97bdf7de6fc8574f5",
-        "date_checked": "2025-03-19 23:04:00"
+        "date_checked": "2025-03-21 14:01:20"
     },
     {
         "url": "https://download-mac.grammarly.com/Grammarly.dmg",
         "name": "Grammarly MAC",
         "version": "DMG",
         "hash_value": "54727b80092655e49eaa3ab06bdc29b63d5bd08711e58aa5cbb01a00bd68a1de",
-        "date_checked": "2025-03-19 23:04:06"
+        "date_checked": "2025-03-21 14:01:24"
     },
     {
         "url": "https://download.dnsfilter.com/User_Agent/MacOS/DNSFilter%20Agent-Installer.pkg",
         "name": "DNSFilter MAC",
         "version": "PKG",
         "hash_value": "8b25b09cfc89fe457d6fa18813226d244f12a72c5ea817cf5501cd4908adc8bd",
-        "date_checked": "2025-03-19 23:04:08"
+        "date_checked": "2025-03-21 14:01:25"
     },
     {
         "url": "https://downloads.paessler.com/tools/snmp-tester/Paessler%20SNMP%20Tester.zip",
         "name": "SNMP Tester",
         "version": "ZIP",
         "hash_value": "d616408a0c82a88c760731e4c72c6f44759ca532a070adff37a000aa279c249a",
-        "date_checked": "2025-03-19 23:04:09"
+        "date_checked": "2025-03-21 14:01:26"
     },
     {
         "url": "https://downloads.paessler.com/tools/snmp-tester/Paessler%20SNMP%20Tester.zip",
         "name": "SNMP Tester Unzipped",
         "version": "Paessler SNMP Tester Setup.exe",
         "hash_value": "bcf89265a7c83bb56aac394007604c3a6134bc003eb2e6f479e9ff0910643dc2",
-        "date_checked": "2025-03-19 23:04:10"
+        "date_checked": "2025-03-21 14:01:27"
     },
     {
         "url": "https://app.drivestrike.com/static/drivestrike/setup.exe",
         "name": "DriveStrike",
         "version": "1.6.12.0",
         "hash_value": "2b512772af02d0f842802d25ecf2bea25516af8fe0af1f101d275b607517b1e0",
-        "date_checked": "2025-03-19 23:04:14"
+        "date_checked": "2025-03-21 14:01:29"
     },
     {
         "url": "https://downloads.poly.com/headsets/PlantronicsHubInstaller.exe",
         "name": "PlantronicsHubInstaller",
         "version": "3.25.-11229.37251",
         "hash_value": "e386741608604faea8ebb51c8c6bcdbf5493ff006968f0234751745e5ec5cd4c",
-        "date_checked": "2025-03-19 23:04:19"
+        "date_checked": "2025-03-21 14:01:34"
     },
     {
         "url": "https://builds.getgocdn.com/builds/calendarintegration/outlook/G2M/setup.exe",
         "name": "GoToMeeting Outlook Plugin",
         "version": "1.7.45.0",
         "hash_value": "689c62dabafb5cefaaf701178b0103fc4e930a200f25554b6f514af4e3e02142",
-        "date_checked": "2025-03-19 23:04:20"
+        "date_checked": "2025-03-21 14:01:34"
     },
     {
         "url": "https://go.skype.com/windows.desktop.download",
         "name": "Skype",
         "version": "8.138.0.209",
-        "hash_value": "d2362aff3e33d131611d72236df9b32908aa62fa388f273856b8ec5a84f0edf0",
-        "date_checked": "2025-03-19 23:04:25"
+        "hash_value": "0bffbb226c883474e2770e5f360c08bf38ab40283fd02a7537f2f8577b5d6aa4",
+        "date_checked": "2025-03-21 14:01:40"
     },
     {
         "url": "https://mega.nz/MEGAsyncSetup64.exe",
         "name": "Mega64",
         "version": "5.9.0.3",
         "hash_value": "529b2a7a72eb532e309a57d0599a3552649082345f9c1e0353d487b4a7f6d771",
-        "date_checked": "2025-03-19 23:04:31"
+        "date_checked": "2025-03-21 14:01:45"
     },
     {
         "url": "https://mega.nz/MEGAsyncSetup32.exe",
         "name": "Mega32",
         "version": "5.9.0.3",
         "hash_value": "2e6ff957db65870b8c5c95016c66937b2d1ca0ca52cf29a0645c7edc8a711e21",
-        "date_checked": "2025-03-19 23:04:38"
+        "date_checked": "2025-03-21 14:01:50"
     },
     {
         "url": "https://assets.nextiva.com/download/Nextiva-win.exe",
         "name": "Nextiva",
         "version": "1.17.0.0",
         "hash_value": "009d73154ecea83a51b3c7f815188d81d5f419da677cc85dac982c85bca5ea8f",
-        "date_checked": "2025-03-19 23:04:45"
+        "date_checked": "2025-03-21 14:01:54"
     },
     {
         "url": "https://portal.galacticscan.com/go/89/GalacticScan.exe",
         "name": "GalacticScan",
         "version": "1.26.62.0",
         "hash_value": "79c6cba28a337018e93892a2cbc6b91e1227eb4119b982f082a3d25aa55dace8",
-        "date_checked": "2025-03-19 23:04:56"
+        "date_checked": "2025-03-21 14:01:58"
     },
     {
         "url": "https://software.vc.logitech.com/downloads/tune/LogiTuneInstall.exe",
         "name": "LogiTune",
         "version": "3.9.168.0",
         "hash_value": "f8824885d8c5cc6512884985e72b24e84fe50da62cd0ad8b9834e04b959a8e72",
-        "date_checked": "2025-03-19 23:05:05"
+        "date_checked": "2025-03-21 14:02:06"
     },
     {
         "url": "https://www.nchsoftware.com/capture/debutpsetup.exe",
         "name": "NCHSoftware",
         "version": "0.0.0.0",
         "hash_value": "08f6bc57ec86ac3d73eed5326e395e2ad5f32b40da7a0e682ed5410affe8db21",
-        "date_checked": "2025-03-19 23:05:07"
+        "date_checked": "2025-03-21 14:02:09"
     },
     {
         "url": "https://download.visualstudio.microsoft.com/download/pr/c7dac50a-e3e8-40f6-bbb2-9cc4e3dfcabe/1821577409C35B2B9505AC833E246376CC68A8262972100444010B57226F0940/VC_redist.x64.exe",
         "name": "VS Microsoft Redist 64",
         "version": "14.42.-31103.0",
         "hash_value": "1821577409c35b2b9505ac833e246376cc68a8262972100444010b57226f0940",
-        "date_checked": "2025-03-19 23:05:09"
+        "date_checked": "2025-03-21 14:02:11"
     }
 ]
